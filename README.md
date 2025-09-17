@@ -12,11 +12,3 @@ It takes a base Swagger YAML and request/response samples, then expands them int
 - Download the generated API documentation  
 - Runs on [Streamlit](https://streamlit.io)  
 
----
-
-## ⚙️ Installation
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/<your-username>/swagger-analyzer-openrouter.git
-cd swagger-analyzer-openrouter
