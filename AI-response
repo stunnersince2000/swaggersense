@@ -1,0 +1,88 @@
+Based on the provided request and response details, I'll expand the base Swagger YAML into a complete OpenAPI-compliant YAML. Here it is:
+
+```yaml
+openapi: 3.0.0
+info:
+  title: Pet and Bank API
+  description: API for pet and bank operations
+  version: 1.0.0
+
+paths:
+  /pet:
+    post:
+      summary: Save a pet
+      description: Save a pet with the given details
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - pet
+                - Animal
+              properties:
+                pet:
+                  type: string
+                Animal:
+                  type: string
+      responses:
+        200:
+          description: Pet saved successfully
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: Pet saved successfully
+        400:
+          description: Pet is unavailable
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: Pet is unavailable
+
+  /bank:
+    post:
+      summary: Withdraw money from dog
+      description: Withdraw money from dog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - bank
+              properties:
+                bank:
+                  type: string
+      responses:
+        200:
+          description: Money withdrawn from dog
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: Money withdrawn from dog
+        201:
+          description: Withdrawal created
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: Withdrawal created
+        400:
+          description: Exited
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: Exited
+```
+
+This OpenAPI definition includes two endpoints: `/pet` and `/bank`. The `/pet` endpoint accepts a POST request with a JSON body containing `pet` and `Animal` properties. The response includes a 200 status code with a success message, and a 400 status code with an error message.
+
+The `/bank` endpoint also accepts a POST request with a JSON body containing a `bank` property. The response includes three possible status codes: 200 with a success message, 201 with a creation message, and 400 with an error message.
+
+Note that I've used the `text/plain` media type for the response bodies, assuming that the responses will be simple text messages. If the responses will contain more complex data, you may need to adjust the `content` section accordingly.
